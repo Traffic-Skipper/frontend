@@ -1,17 +1,21 @@
 <template>
   <view class="container">
-    <text class="text-color-primary">ENNAMO FUNZIONA</text>
+      <home-page/>
   </view>
 </template>
 
+<script>
+import HomePage from "./src/pages/HomePage.vue";
+
+export default {
+    components: {
+        HomePage,
+    }
+}
+</script>
+
 <style>
 .container {
-  background-color: white;
-  align-items: center;
-  justify-content: center;
-  flex: 1;
-}
-.text-color-primary {
-  color: blue;
+    flex: 1;
 }
 </style>
