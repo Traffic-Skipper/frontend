@@ -18,16 +18,16 @@ export default {
 
 <style>
 .container {
-    margin-top: 60px;
+    margin-top: 40px;
     flex-direction: row;
     align-content: center;
 }
 
 .arms {
-    margin-top: 4px;
+    margin-top: 8px;
     margin-left: 20px;
-    height: 40px;
-    width: 35px;
+    height: 35px;
+    width: 30px;
     object-fit: fill;
 }
 

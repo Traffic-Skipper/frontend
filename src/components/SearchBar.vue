@@ -3,17 +3,30 @@
         <image class="icon" :source="require('../../assets/search.png')"/>
         <text-input class="input"
                     enter-key-hint="search"
-                    placeholder="E.g. A1 or "
-                    v-model="text"/>
+                    placeholder="E.g. A1 or Gossau"
+                    v-model="text"
+                    :on-submit-editing="moveRegion"/>
     </view>
 </template>
 
 <script>
+import storage from "../store";
+
 export default {
     name: "TopBar",
     data: () => {
         return {
             text: ''
+        }
+    },
+    methods: {
+        async moveRegion() {
+            let response = await fetch(`http://127.0.0.1:5000/sensor/search?query=${this.text}`)
+
+            await storage.save({
+                key: 'sensor',
+                data: await response.json()
+            })
         }
     }
 }
